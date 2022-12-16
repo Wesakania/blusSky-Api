@@ -1,5 +1,6 @@
 const { request, response } = require("express")
 const express = require("express")
+const cors = require("cors")
 const app = express()
 const PORT = 8000
 
@@ -29,6 +30,8 @@ const pupils = {
       "status":"unknown" 
      }                                 
 }
+
+app.use(cors());
 
 app.get("/",(request,response) => {
   response.sendFile(__dirname + "/index.html")
